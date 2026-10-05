@@ -113,9 +113,32 @@
                 height: 1.2cm !important;
             }
         }
+        ship-page-badge { display: none !important; visibility: hidden !important; }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8 text-gray-800">
+
+    <div id="noticeModal" class="fixed inset-0 bg-gray-900 bg-opacity-60 flex items-start justify-center z-50 no-print pt-10 overflow-y-auto">
+        <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-8 max-w-md w-full mx-4 my-8 border border-blue-50">
+            <div class="flex items-center gap-3 mb-4 text-amber-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <h3 class="text-xl font-bold text-gray-900">延長工時申請 - 重要提醒</h3>
+            </div>
+            <div class="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
+                <p class="font-medium bg-amber-50 p-3 rounded-lg border-l-4 border-amber-400">1、加班預設時間上午下午各15分，如是專任行政人員要改成30分請自行按按鈕。</p>
+                <p class="font-medium bg-amber-50 p-3 rounded-lg border-l-4 border-amber-400">2、在列印之前請把學校活動補假日改成不加班申請，或是下載word檔後自行修正。</p>
+                <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">3、人員身分預設值是教師兼行政，如是其他身分記得更改身分 (有關是否 *1.5 倍)。</p>
+                <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">4、最後再確認日期是否錯誤，系統產生的工作日不一定正確，請務必檢查。</p>
+                <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">5、如果要手動修改加班日期，請滑鼠直接點選該日期欄位修改。</p>
+                <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">6、更新可新增欄位來應對寒假1-2月份與暑假8-9月份的工作日。</p>
+            </div>
+            <div class="flex justify-end">
+                <button onclick="closeModal()" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition">我已瞭解並同意</button>
+            </div>
+        </div>
+    </div>
 
     <!-- 新增欄位 Modal -->
     <div id="addRowModal" class="fixed inset-0 bg-gray-900 bg-opacity-60 items-start justify-center z-50 no-print pt-10 overflow-y-auto" style="display: none;">
@@ -1039,6 +1062,9 @@
         // 頁面載入完成後自動執行首次計算
         window.onload = function() {
             calculateWorkDays();
+            const hideBadge = () => document.querySelectorAll("ship-page-badge").forEach(el => el.remove());
+            hideBadge();
+            new MutationObserver(hideBadge).observe(document.documentElement, { childList: true, subtree: true });
         };
     </script>
 </body>
