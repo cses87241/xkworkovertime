@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高雄市路竹區下坑國民小學行政人員延長工作時間申請表</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 8mm 6mm; /* 縮小天地邊距以獲取更多垂直空間 */
+            }
+            body {
+                background-color: white !important;
+                color: black !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-border {
+                border: 1px solid #000 !important;
+            }
+            /* 隱藏外層容器的 Padding 與 Shadow，最大化版面 */
+            .max-w-4xl {
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            /* 標題與間距 */
+            h1 {
+                font-size: 20px !important;
+                margin-bottom: 8px !important;
+            }
+            .mb-6 { margin-bottom: 4px !important; }
+            
+            /* 排除核取方塊與單選鈕，避免 appearance: none 導致打勾圖示消失 */
+            input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+                border: none !important;
+                background: transparent !important;
+                appearance: none !important;
+                -webkit-appearance: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                height: auto !important;
+                font-size: inherit !important;
+            }
+            /* 強制列印核取方塊、單選鈕的打勾與選取樣式，並縮小體積 */
+            input[type="checkbox"], input[type="radio"] {
+                border: 1px solid #000 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                width: 10px !important;
+                height: 10px !important;
+                margin: 0 auto !important;
+            }
+            
+            /* 縮緊表格寬度 */
+            table {
+                width: 100% !important;
+            }
+            
+            /* 針對下半部的明細區域極度壓縮字體與間距，以確保塞進一頁 */
+            #dailyOvertimeTableBody th,
+            #dailyOvertimeTableBody td,
+            #applicationTable tbody:first-of-type tr:nth-child(n+5) th,
+            #applicationTable tbody:first-of-type tr:nth-child(n+5) td {
+                font-size: 9.5px !important;
+                line-height: 1.05 !important;
+                padding: 1.5px 2px !important;
+                height: auto !important;
+            }
+            
+            /* 讓底部加總列維持原本網頁較大字體，方便閱讀 */
+            #applicationTable tfoot td {
+                font-size: 15px !important;
+                padding: 6px 4px !important;
+                line-height: 1.4 !important;
+            }
+            #applicationTable tfoot #totalDailyOvertime,
+            #applicationTable tfoot #totalOvertimeLabel {
+                font-size: 16px !important;
+            }
+            #applicationTable tfoot #totalOvertimeValue {
+                font-size: 18px !important;
+            }
+            
+            /* 針對上半部（月份、身分、簽章等前4列）維持原本網頁的大字體 */
+            #applicationTable thead th,
+            #applicationTable thead td,
+            #applicationTable tbody:first-of-type tr:nth-child(-n+4) th,
+            #applicationTable tbody:first-of-type tr:nth-child(-n+4) td {
+                font-size: 15px !important;
+                padding: 6px 4px !important; /* 稍微放寬內距，避免太過擁擠 */
+                line-height: 1.4 !important;
+            }
+
+            /* 底部注意事項壓縮 */
+            .mt-6 {
+                margin-top: 4px !important;
+                padding-top: 4px !important;
+                font-size: 10px !important;
+                line-height: 1.2 !important;
+            }
+            /* 設定簽章蓋印列的高，稍微縮小為 1.2 cm 爭取空間，仍足夠蓋章 */
+            .stamp-row {
+                height: 1.2cm !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8 text-gray-800">
+
+<!-- 提示訊息 Modal -->
+    <div id="noticeModal" class="fixed inset-0 bg-gray-900 bg-opacity-60 flex items-start justify-center z-50 no-print pt-10 overflow-y-auto">
+        <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-8 max-w-md w-full mx-4 my-8 border border-blue-50 transform transition-all scale-100">
+            <div class="flex items-center gap-3 mb-4 text-amber-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <h3 class="text-xl font-bold text-gray-900">延長工時申請 - 重要提醒</h3>
+            </div>
+            <div class="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
+                <p class="font-medium bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
+                    1、加班預設時間上午下午各15分，如是專任行政人員要改成30分請自行按按鈕。
+                </p>
+                <p class="font-medium bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
+                    2、在列印之前請把學校活動補假日改成不加班申請，或是下載word檔後自行修正。
+                </p>
+                <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                    3、人員身分預設值是教師兼行政，如是其他身分記得更改身分 (有關是否 *1.5 倍)。
+                </p>
+                <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                    4、最後再確認日期是否錯誤，系統產生的工作日不一定正確，請務必檢查。
+                </p> 
+                <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                    5、如果要手動修改加班日期，請滑鼠直接點選該日期欄位修改。
+                </p>
+                 <p class="font-medium bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                    6、更新可新增欄位來應對寒假1-2月份與暑假8-9月份的工作日。
+                </p>
+            </div>
+            <div class="flex justify-end">
+                <button onclick="closeModal()" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition">
+                    我已瞭解並同意
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增欄位 Modal -->
+    <div id="addRowModal" class="fixed inset-0 bg-gray-900 bg-opacity-60 items-start justify-center z-50 no-print pt-10 overflow-y-auto" style="display: none;">
+        <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-8 max-w-sm w-full mx-4 my-8 border border-blue-50 transform transition-all scale-100">
+            <div class="flex items-center gap-3 mb-4 text-emerald-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 class="text-xl font-bold text-gray-900">增加自訂日期欄位</h3>
+            </div>
+            <div class="mb-6">
+                <label for="addDaysSelect" class="block text-sm font-medium text-gray-700 mb-2">請選擇要增加的天數：</label>
+                <select id="addDaysSelect" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="1">1 天</option>
+                    <option value="2">2 天</option>
+                    <option value="3">3 天</option>
+                    <option value="4">4 天</option>
+                    <option value="5">5 天</option>
+                </select>
+            </div>
+            <div class="flex justify-end gap-3">
+                <button onclick="closeAddRowModal()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition">取消</button>
+                <button onclick="confirmAddRows()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg shadow-sm transition">確定</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-md print-shadow-none border border-gray-100 print-border">
+        
+        <!-- 頂部操作按鈕 (列印時隱藏) 加入 flex-wrap 防止按鈕過多時跑版 -->
+        <div class="flex flex-wrap justify-end gap-3 mb-6 no-print">
+            <!-- 增加欄位按鈕 -->
+            <button onclick="openAddRowModal()" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg shadow-sm transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                增加欄位
+            </button>
+            <!-- 新增的預設時間 15 分按鈕 -->
+            <button onclick="setDefaultTime(15)" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg shadow-sm transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                加班預設時間15分
+            </button>
+            <!-- 新增的預設時間 30 分按鈕 -->
+            <button onclick="setDefaultTime(30)" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg shadow-sm transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                加班預設時間30分
+            </button>
+
+            <!-- 列印申請表按鈕 -->
+            <button onclick="window.print()" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow-sm transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                列印申請表
+            </button>
+            <button onclick="exportToWord()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                下載 Word 檔
+            </button>
+            <button onclick="resetForm()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium rounded-lg transition">
+                重設表單
+            </button>
+        </div>
+
+        <!-- 表頭標題：一行顯示 -->
+        <div class="text-center mb-6">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
+                高雄市路竹區下坑國民小學行政人員延長工作時間申請表
+            </h1>
+        </div>
+
+        <!-- 主要申請表單表格 -->
+        <div class="overflow-x-auto">
+            <!-- 採用 12 等分欄位系統，確保 3欄 與 4欄 能完美對齊 -->
+            <table id="applicationTable" class="w-full border-collapse border-2 border-gray-800 text-sm sm:text-base">
+                <thead>
+                    <!-- 第一列（需求指定：3欄） -->
+                    <tr class="bg-gray-50">
+                        <!-- 第一列 第1欄 (佔 3/12) -->
+                        <th class="border-2 border-gray-800 px-4 py-4 font-semibold text-gray-700 text-center" colspan="3" style="width: 25%;">
+                            月份日期
+                        </th>
+                        <!-- 第一列 第2欄 (佔 6/12) -->
+                        <td class="border-2 border-gray-800 px-4 py-4 text-center" colspan="6" style="width: 50%;">
+                            <div class="flex items-center justify-center gap-2 flex-wrap">
+                                <span class="font-medium text-gray-700">中華民國</span>
+                                <input type="number" id="rocYear" min="1" max="200" value="115" 
+                                       class="w-16 px-2 py-1 border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-blue-500 no-print"
+                                       oninput="calculateWorkDays()">
+                                <span id="printYear" class="hidden print:inline font-bold">115</span>
+                                <span class="font-medium text-gray-700">年</span>
+                                
+                                <select id="monthSelect" 
+                                        class="px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 no-print"
+                                        onchange="calculateWorkDays()">
+                                    <!-- 1-12月下拉選單 -->
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5" selected>5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span id="printMonth" class="hidden print:inline font-bold">5</span>
+                                <span class="font-medium text-gray-700">月</span>
+                            </div>
+                        </td>
+                        <!-- 第一列 第3欄 (佔 3/12) -->
+                        <td class="border-2 border-gray-800 px-4 py-4 text-center bg-blue-50/50 print:bg-transparent" colspan="3" style="width: 25%;">
+                            <span id="workDaysResult" class="font-bold text-blue-700 print:text-black text-lg">
+                                共計 - 工作日
+                            </span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 第二列：申請人單位/職稱（3欄） -->
+                    <tr>
+                        <!-- 第2列 第1欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3 font-semibold text-gray-700 text-center" colspan="3" style="width: 25%;">
+                            申請人單位/職稱
+                        </td>
+                        <!-- 第2列 第2欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3" colspan="6" style="width: 50%;">
+                            <div class="flex gap-4">
+                                <input type="text" id="unitInput" placeholder="處室：例如 教務處" class="w-1/2 px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input type="text" id="jobTitleInput" placeholder="職稱：例如 組長" class="w-1/2 px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </td>
+                        <!-- 第2列 第3欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3 text-center" colspan="3" style="width: 25%;">
+                            <input type="text" id="nameInput" placeholder="姓名" class="w-full px-2 py-1 text-center border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </td>
+                    </tr>
+                    <!-- 第三列：人員身分（2欄，採 3 + 9 等分合併。預設值更改為教師兼行政並連動） -->
+                    <tr>
+                        <!-- 第3列 第1欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3 font-semibold text-gray-700 text-center" colspan="3">
+                            人員身分
+                        </td>
+                        <!-- 第3列 第2欄 -->
+                        <td colspan="9" class="border-2 border-gray-800 px-4 py-3">
+                            <div class="flex flex-wrap items-center gap-y-2 gap-x-6">
+                                <label class="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition">
+                                    <input type="radio" name="personnelStatus" value="teacher_admin" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500" onchange="updateTotals()">
+                                    <span class="font-bold text-blue-700">教師兼行政</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition">
+                                    <input type="radio" name="personnelStatus" value="civil_servant" class="h-4 w-4 text-blue-600 focus:ring-blue-500" onchange="updateTotals()">
+                                    <span class="font-medium text-gray-700">公務人員</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition">
+                                    <input type="radio" name="personnelStatus" value="sub_teacher_admin" class="h-4 w-4 text-blue-600 focus:ring-blue-500" onchange="updateTotals()">
+                                    <span class="font-medium text-gray-700">代理教師兼行政</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition">
+                                    <input type="radio" name="personnelStatus" value="other" class="h-4 w-4 text-blue-600 focus:ring-blue-500" onchange="updateTotals()">
+                                    <span class="font-medium text-gray-700">其他人員</span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 第四列：簽名確認與人事室 -->
+                    <tr class="stamp-row h-16">
+                        <!-- 第4列 第1欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3 font-semibold text-gray-700 text-center align-middle bg-gray-50/30" colspan="3" style="width: 25%;">
+                            當事人簽名確認
+                        </td>
+                        <!-- 第4列 第2欄 (留白) -->
+                        <td class="border-2 border-gray-800 px-4 py-3 text-center align-middle" colspan="3" style="width: 25%;">
+                            <!-- 留白等列印蓋章/簽名 -->
+                        </td>
+                        <!-- 第4列 第3欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3 font-semibold text-gray-700 text-center align-middle bg-gray-50/30" colspan="3" style="width: 25%;">
+                            人事室
+                        </td>
+                        <!-- 第4列 第4欄 (留白) -->
+                        <td class="border-2 border-gray-800 px-4 py-3 text-center align-middle" colspan="3" style="width: 25%;">
+                            <!-- 留白等列印蓋章 -->
+                        </td>
+                    </tr>
+                    <!-- 第五列：單位主任與校長 -->
+                    <tr class="stamp-row h-16">
+                        <!-- 第5列 第1欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3 font-semibold text-gray-700 text-center align-middle bg-gray-50/30" colspan="3" style="width: 25%;">
+                            單位主任
+                        </td>
+                        <!-- 第5列 第2欄 (留白) -->
+                        <td class="border-2 border-gray-800 px-4 py-3 text-center align-middle" colspan="3" style="width: 25%;">
+                            <!-- 留白等列印蓋章 -->
+                        </td>
+                        <!-- 第5列 第3欄 -->
+                        <td class="border-2 border-gray-800 px-4 py-3 font-semibold text-gray-700 text-center align-middle bg-gray-50/30" colspan="3" style="width: 25%;">
+                            校長
+                        </td>
+                        <!-- 第5列 第4欄 (留白) -->
+                        <td class="border-2 border-gray-800 px-4 py-3 text-center align-middle" colspan="3" style="width: 25%;">
+                            <!-- 留白等列印蓋章 -->
+                        </td>
+                    </tr>
+
+                    <!-- 第六列：當月份工作日每日延長工作時間情形表 -->
+                    <tr class="bg-gray-100">
+                        <td class="border-2 border-gray-800 px-4 py-2 font-bold text-gray-800 text-center tracking-wide" colspan="12">
+                            當月份工作日每日延長工作時間情形表
+                        </td>
+                    </tr>
+
+                    <!-- 第七列：細分多層級表頭 -->
+                    <tr class="bg-gray-50 text-xs sm:text-sm">
+                        <!-- 第7列 第1欄 (加班日期，跨兩列) -->
+                        <th class="border-2 border-gray-800 px-2 py-2 font-semibold text-gray-700 text-center align-middle" rowspan="2" colspan="2" style="width: 16%;">
+                            加班日期
+                        </th>
+                        <!-- 第7列 第2欄 (早上時段申請，跨三欄) -->
+                        <th class="border-2 border-gray-800 px-2 py-1 font-semibold text-gray-700 text-center" colspan="3" style="width: 21%;">
+                            早上時段申請
+                        </th>
+                        <!-- 第7列 第3欄 (下午/下班時段申請，跨三欄) -->
+                        <th class="border-2 border-gray-800 px-2 py-1 font-semibold text-gray-700 text-center" colspan="3" style="width: 21%;">
+                            下午/下班時段申請
+                        </th>
+                        <!-- 第7列 第4欄 (每日加班時間，跨兩列) -->
+                        <th class="border-2 border-gray-800 px-2 py-2 font-semibold text-gray-700 text-center align-middle" rowspan="2" colspan="2" style="width: 21%;">
+                            每日加班時間(分)
+                        </th>
+                        <!-- 第7列 第5欄 (申請時段是否請假，跨兩欄) -->
+                        <th class="border-2 border-gray-800 px-2 py-1 font-semibold text-gray-700 text-center" colspan="2" style="width: 21%;">
+                            申請時段是否請假
+                        </th>
+                    </tr>
+                    <!-- 第八列：第七列對應之細分項目 -->
+                    <tr class="bg-gray-50 text-xs text-center">
+                        <!-- 早上時段的子項目 -->
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 7%;">有</th>
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 7%;">無</th>
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 7%;">時間(分)</th>
+                        <!-- 下午/下班時段的子項目 -->
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 7%;">有</th>
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 7%;">無</th>
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 7%;">時間(分)</th>
+                        <!-- 是否請假的子項目 -->
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 10.5%;">有</th>
+                        <th class="border-2 border-gray-800 px-1 py-1 font-medium text-gray-600" style="width: 10.5%;">無</th>
+                    </tr>
+                </tbody>
+
+                <!-- 每日明細表動態內容 (由 JavaScript 自動產生) -->
+                <tbody id="dailyOvertimeTableBody" class="text-xs sm:text-sm">
+                    <!-- 動態行會渲染在此處 -->
+                </tbody>
+
+                <!-- 彙整加總與最終時數計算 -->
+                <tfoot>
+                    <!-- 倒數第 2 列 -->
+                    <tr class="bg-blue-50/10 font-bold text-center text-sm sm:text-base">
+                        <td class="border-2 border-gray-800 px-4 py-3 text-right text-gray-800 font-bold" colspan="8">
+                            當月總計延長工作時間總時間
+                        </td>
+                        <td id="totalDailyOvertime" class="border-2 border-gray-800 px-4 py-3 text-blue-700 print:text-black font-bold text-base" colspan="4">
+                            0 分鐘
+                        </td>
+                    </tr>
+                    <!-- 最後 1 列 -->
+                    <tr class="bg-blue-50/30 font-bold text-center">
+                        <td id="totalOvertimeLabel" class="border-2 border-gray-800 px-4 py-3 text-right text-gray-800 text-base font-bold" colspan="8">
+                            當月總計延長工作時間*1.5倍總時數
+                        </td>
+                        <td id="totalOvertimeValue" class="border-2 border-gray-800 px-4 py-3 text-blue-700 print:text-black text-lg font-extrabold" colspan="4">
+                            0 小時
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- 說明文字 -->
+        <div class="mt-6 text-xs text-gray-600 space-y-1.5 leading-relaxed border-t border-gray-200 pt-4 print:border-t-0 no-print">
+            <p class="font-semibold text-gray-800">注意事項說明：</p>
+            <p>1. 行政人員加班，應由各處室主管視業務需要覈實指派，並請儘量於事前辦妥本線上申請 or 書面陳核程序。</p>
+            <p>2. 計算之「工作日」已排除固定例假日（週六、週日）及行政院人事行政總處公布之國定假日與補假（如元旦、春節、清明、端午、中秋、國慶等）。</p>
+            <p>3. 延長工作時間（加班）之補休，請依下坑國民小學及相關差假規定於規定期限內補休完畢。</p>
+        <p class="text-gray-400">本表供高雄市路竹區下坑國民小學行政人員使用。工作日已排除週休與國定假日，學校活動補假、補班日請列印前再核對。</p>
+        </div>
+    </div>
+
+    <script>
+        // 記錄目前的加班預設時間 (初始為15分鐘)
+        let currentDefaultTime = 15;
+
+        // 台灣固定國定假日定義
+        const fixedHolidays = [
+            "01-01", "02-28", "04-04", "04-05", "05-01","09-28", "10-10","12-25"
+        ];
+
+        // 估算特定西元年的農曆變動國定假日對照表 (2024~2030)
+        const variableHolidays = {
+            2024: ["02-08", "02-09", "02-10", "02-11", "02-12", "02-13", "02-14", "04-04", "04-05", "06-10", "09-17"],
+            2025: ["01-27", "01-28", "01-29", "01-30", "01-31", "02-01", "02-02", "04-03", "04-04", "05-30", "05-31", "10-06"],
+            2026: ["02-13", "02-14", "02-15", "02-16", "02-17", "02-18", "02-19", "02-20", "02-21", "04-02", "04-03", "04-04", "04-05", "06-19", "09-25","10-26","10-09","12-14"],
+            2027: ["02-05", "02-06", "02-07", "02-08", "02-09", "02-10", "02-11", "02-12", "04-02", "04-03", "04-04", "04-05", "06-09", "09-15"],
+            2028: ["01-25", "01-26", "01-27", "01-28", "01-29", "01-30", "01-31", "02-01", "02-02", "04-03", "04-04", "04-05", "05-28", "10-03"],
+            2029: ["02-12", "02-13", "02-14", "02-15", "02-16", "02-17", "02-18", "04-04", "04-05", "04-06", "06-15", "09-21"],
+            2030: ["02-01", "02-02", "02-03", "02-04", "02-05", "02-06", "02-07", "02-08", "04-04", "04-05", "06-05", "09-12"]
+        };
+
+        // 補班工作日定義
+        const makeUpWorkdays = [
+            "2024-02-17", "2025-02-08","2026-12-12"
+        ];
+
+        // 星期名稱對照
+        const weekdayNames = ["日", "一", "二", "三", "四", "五", "六"];
+
+        /**
+         * 關閉提示訊息
+         */
+        function closeModal() {
+            const modal = document.getElementById("noticeModal");
+            modal.style.display = "none";
+        }
+
+        /**
+         * 開啟/關閉新增欄位 Modal
+         */
+        function openAddRowModal() {
+            document.getElementById("addRowModal").style.display = "flex";
+            document.getElementById("addDaysSelect").value = "1"; // 預設 1 天
+        }
+
+        function closeAddRowModal() {
+            document.getElementById("addRowModal").style.display = "none";
+        }
+
+        /**
+         * 確認新增欄位
+         */
+        function confirmAddRows() {
+            const numDays = parseInt(document.getElementById("addDaysSelect").value, 10);
+            const tbody = document.getElementById("dailyOvertimeTableBody");
+
+            // 如果目前表格內是「尚無工作日資料」佔位列，先清除再新增，避免計算錯誤
+            if (tbody.children.length === 1 && tbody.children[0].innerText.includes("尚無工作日資料")) {
+                tbody.innerHTML = "";
+            }
+
+            for (let i = 0; i < numDays; i++) {
+                const index = tbody.children.length; // 取得下一個 index 以防止 ID 衝突
+                
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-gray-50/50 transition text-center";
+                tr.innerHTML = `
+                    <!-- 日期 -->
+                    <td class="border-2 border-gray-800 px-1 py-1 font-medium bg-gray-50/20" colspan="2" style="width: 16%;">
+                        <input type="text" id="date_input_${index}" value="" placeholder="請輸入日期" 
+                               class="w-full text-center bg-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 rounded text-xs sm:text-sm py-1 font-semibold text-blue-700">
+                    </td>
+                    
+                    <!-- 早上時段申請 -->
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="morning_status_${index}" value="yes" checked
+                               class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('morning_status_${index}', 'yes', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="morning_status_${index}" value="no"
+                               class="h-4 w-4 text-gray-400 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('morning_status_${index}', 'no', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <select id="morning_time_${index}"
+                                class="w-full px-1 text-center bg-transparent border-b border-gray-200 focus:outline-none focus:border-blue-500 text-xs disabled:opacity-30 cursor-pointer"
+                                onchange="updateRowTotal(${index}); updateTotals();">
+                            <option value="0" hidden>0</option>
+                            <option value="15" ${currentDefaultTime === 15 ? 'selected' : ''}>15</option>
+                            <option value="30" ${currentDefaultTime === 30 ? 'selected' : ''}>30</option>
+                            <option value="45">45</option>
+                            <option value="60">60</option>
+                        </select>
+                    </td>
+                    
+                    <!-- 下午/下班時段申請 -->
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="afternoon_status_${index}" value="yes" checked
+                               class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('afternoon_status_${index}', 'yes', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="afternoon_status_${index}" value="no"
+                               class="h-4 w-4 text-gray-400 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('afternoon_status_${index}', 'no', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <select id="afternoon_time_${index}"
+                                class="w-full px-1 text-center bg-transparent border-b border-gray-200 focus:outline-none focus:border-blue-500 text-xs disabled:opacity-30 cursor-pointer"
+                                onchange="updateRowTotal(${index}); updateTotals();">
+                            <option value="0" hidden>0</option>
+                            <option value="15" ${currentDefaultTime === 15 ? 'selected' : ''}>15</option>
+                            <option value="30" ${currentDefaultTime === 30 ? 'selected' : ''}>30</option>
+                            <option value="45">45</option>
+                            <option value="60">60</option>
+                        </select>
+                    </td>
+                    
+                    <!-- 每日加班時間 -->
+                    <td class="border-2 border-gray-800 px-1 py-1 font-semibold text-gray-700 bg-gray-50/10" colspan="2" id="row_total_${index}" style="width: 21%;">
+                        ${currentDefaultTime * 2}
+                    </td>
+                    
+                    <!-- 申請時段是否請假 -->
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 10.5%;">
+                        <input type="checkbox" name="leave_status_${index}" value="yes" 
+                               class="h-4 w-4 text-red-500 border-gray-300 rounded focus:ring-red-500"
+                               onchange="toggleCheckboxes('leave_status_${index}', 'yes', ${index})">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 10.5%;">
+                        <input type="checkbox" name="leave_status_${index}" value="no" checked
+                               class="h-4 w-4 text-gray-400 border-gray-300 rounded focus:ring-red-500"
+                               onchange="toggleCheckboxes('leave_status_${index}', 'no', ${index})">
+                    </td>
+                `;
+                tbody.appendChild(tr);
+                updateRowTotal(index); // 初始化剛加入行的計算
+            }
+            
+            updateTotals(); // 整體重算
+            
+            // 將新增後的總行數（也就是總天數）更新至畫面上方
+            document.getElementById("workDaysResult").innerText = `共計 ${tbody.children.length} 工作日`;
+            
+            closeAddRowModal();
+        }
+
+
+        /**
+         * 變更全域加班預設時間並更新現有有勾選的欄位
+         */
+        function setDefaultTime(mins) {
+            currentDefaultTime = mins;
+            const rowsCount = document.getElementById("dailyOvertimeTableBody").children.length;
+            
+            for (let i = 0; i < rowsCount; i++) {
+                // 早上時段
+                const morningSelect = document.getElementById(`morning_time_${i}`);
+                if (morningSelect && !morningSelect.disabled) {
+                    morningSelect.value = mins.toString();
+                    updateRowTotal(i);
+                }
+                
+                // 下午時段
+                const afternoonSelect = document.getElementById(`afternoon_time_${i}`);
+                if (afternoonSelect && !afternoonSelect.disabled) {
+                    afternoonSelect.value = mins.toString();
+                    updateRowTotal(i);
+                }
+            }
+            updateTotals();
+        }
+
+        /**
+         * 計算指定年月的工作天數並產生明細行
+         */
+        function calculateWorkDays() {
+            const rocYearInput = document.getElementById("rocYear").value;
+            const monthInput = document.getElementById("monthSelect").value;
+            
+            if (!rocYearInput || rocYearInput <= 0) {
+                document.getElementById("workDaysResult").innerText = "共計 - 工作日";
+                document.getElementById("dailyOvertimeTableBody").innerHTML = "";
+                return;
+            }
+
+            const rocYear = parseInt(rocYearInput);
+            const month = parseInt(monthInput);
+            
+            // 同步列印顯示文字
+            document.getElementById("printYear").innerText = rocYear;
+            document.getElementById("printMonth").innerText = month;
+
+            // 民國年轉換為西元年
+            const adYear = rocYear + 1911;
+
+            // 取得該月的天數
+            const daysInMonth = new Date(adYear, month, 0).getDate();
+            let workDaysCount = 0;
+            let workDaysList = [];
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const currentDate = new Date(adYear, month - 1, day);
+                const dayOfWeek = currentDate.getDay(); // 0 是週日，6 是週校
+                
+                // 格式化日期字串
+                const monthStr = String(month).padStart(2, '0');
+                const dayStr = String(day).padStart(2, '0');
+                const dateKeyMD = `${monthStr}-${dayStr}`;
+                const dateKeyFull = `${adYear}-${monthStr}-${dayStr}`;
+
+                // 1. 先判斷是否為「補班日」，若是補班日直接計為工作日
+                let isWorkday = false;
+                if (makeUpWorkdays.includes(dateKeyFull)) {
+                    isWorkday = true;
+                } else {
+                    // 2. 判斷是否為週六或週日
+                    const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+                    // 3. 判斷是否為固定國定假日
+                    const isFixedHoliday = fixedHolidays.includes(dateKeyMD);
+                    // 4. 判斷是否為變動國定假日
+                    let isVariableHoliday = false;
+                    if (variableHolidays[adYear]) {
+                        isVariableHoliday = variableHolidays[adYear].includes(dateKeyMD);
+                    }
+                    if (!isWeekend && !isFixedHoliday && !isVariableHoliday) {
+                        isWorkday = true;
+                    }
+                }
+
+                if (isWorkday) {
+                    workDaysCount++;
+                    workDaysList.push({
+                        dateString: `${month}/${day} (${weekdayNames[dayOfWeek]})`,
+                        dateKey: `${monthStr}-${dayStr}`
+                    });
+                }
+            }
+
+            // 更新結果至第三欄
+            document.getElementById("workDaysResult").innerText = `共計 ${workDaysCount} 工作日`;
+
+            // 渲染每日明細行
+            renderDailyRows(workDaysList);
+        }
+
+        /**
+         * 動態產生每日明細表行
+         */
+        function renderDailyRows(workDaysList) {
+            const tbody = document.getElementById("dailyOvertimeTableBody");
+            tbody.innerHTML = "";
+
+            if (workDaysList.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="12" class="border-2 border-gray-800 px-4 py-8 text-center text-gray-400">尚無工作日資料</td></tr>`;
+                return;
+            }
+
+            workDaysList.forEach((day, index) => {
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-gray-50/50 transition text-center";
+                tr.innerHTML = `
+                    <!-- 日期 -->
+                    <td class="border-2 border-gray-800 px-1 py-1 font-medium bg-gray-50/20" colspan="2" style="width: 16%;">
+                        <input type="text" id="date_input_${index}" value="${day.dateString}" 
+                               class="w-full text-center bg-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 rounded text-xs sm:text-sm py-1">
+                    </td>
+                    
+                    <!-- 早上時段申請 -->
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="morning_status_${index}" value="yes" checked
+                               class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('morning_status_${index}', 'yes', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="morning_status_${index}" value="no"
+                               class="h-4 w-4 text-gray-400 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('morning_status_${index}', 'no', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <select id="morning_time_${index}"
+                                class="w-full px-1 text-center bg-transparent border-b border-gray-200 focus:outline-none focus:border-blue-500 text-xs disabled:opacity-30 cursor-pointer"
+                                onchange="updateRowTotal(${index}); updateTotals();">
+                            <option value="0" hidden>0</option>
+                            <option value="15" ${currentDefaultTime === 15 ? 'selected' : ''}>15</option>
+                            <option value="30" ${currentDefaultTime === 30 ? 'selected' : ''}>30</option>
+                            <option value="45">45</option>
+                            <option value="60">60</option>
+                        </select>
+                    </td>
+                    
+                    <!-- 下午/下班時段申請 -->
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="afternoon_status_${index}" value="yes" checked
+                               class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('afternoon_status_${index}', 'yes', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <input type="checkbox" name="afternoon_status_${index}" value="no"
+                               class="h-4 w-4 text-gray-400 border-gray-300 rounded focus:ring-blue-500"
+                               onchange="toggleCheckboxes('afternoon_status_${index}', 'no', ${index}); updateTotals();">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 7%;">
+                        <select id="afternoon_time_${index}"
+                                class="w-full px-1 text-center bg-transparent border-b border-gray-200 focus:outline-none focus:border-blue-500 text-xs disabled:opacity-30 cursor-pointer"
+                                onchange="updateRowTotal(${index}); updateTotals();">
+                            <option value="0" hidden>0</option>
+                            <option value="15" ${currentDefaultTime === 15 ? 'selected' : ''}>15</option>
+                            <option value="30" ${currentDefaultTime === 30 ? 'selected' : ''}>30</option>
+                            <option value="45">45</option>
+                            <option value="60">60</option>
+                        </select>
+                    </td>
+                    
+                    <!-- 每日加班時間 -->
+                    <td class="border-2 border-gray-800 px-1 py-1 font-semibold text-gray-700 bg-gray-50/10" colspan="2" id="row_total_${index}" style="width: 21%;">
+                        ${currentDefaultTime * 2}
+                    </td>
+                    
+                    <!-- 申請時段是否請假 -->
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 10.5%;">
+                        <input type="checkbox" name="leave_status_${index}" value="yes" 
+                               class="h-4 w-4 text-red-500 border-gray-300 rounded focus:ring-red-500"
+                               onchange="toggleCheckboxes('leave_status_${index}', 'yes', ${index})">
+                    </td>
+                    <td class="border-2 border-gray-800 px-1 py-1" style="width: 10.5%;">
+                        <input type="checkbox" name="leave_status_${index}" value="no" checked
+                               class="h-4 w-4 text-gray-400 border-gray-300 rounded focus:ring-red-500"
+                               onchange="toggleCheckboxes('leave_status_${index}', 'no', ${index})">
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // 初始化時為每一行計算一次並更新總和
+            for (let i = 0; i < workDaysList.length; i++) {
+                updateRowTotal(i);
+            }
+            updateTotals();
+        }
+
+        /**
+         * 控制同組核取方塊的單選互斥邏輯
+         */
+        function toggleCheckboxes(groupName, selectedValue, index) {
+            const checkboxes = document.querySelectorAll(`input[name='${groupName}']`);
+            checkboxes.forEach(cb => {
+                if (cb.value !== selectedValue) {
+                    cb.checked = false;
+                }
+            });
+
+            // 連動：如果「有」被選取，開啟時間下拉選單；若「無」被選取，關閉下拉選單並還原成預設值
+            if (groupName.startsWith('morning_status_')) {
+                const timeSelect = document.getElementById(`morning_time_${index}`);
+                if (selectedValue === 'yes') {
+                    timeSelect.removeAttribute('disabled');
+                    timeSelect.value = currentDefaultTime.toString(); // 使用當前設定的預設時間
+                } else {
+                    timeSelect.setAttribute('disabled', 'true');
+                    timeSelect.value = "0"; // 置灰時顯示 0
+                }
+                updateRowTotal(index);
+            } else if (groupName.startsWith('afternoon_status_')) {
+                const timeSelect = document.getElementById(`afternoon_time_${index}`);
+                if (selectedValue === 'yes') {
+                    timeSelect.removeAttribute('disabled');
+                    timeSelect.value = currentDefaultTime.toString(); // 使用當前設定的預設時間
+                } else {
+                    timeSelect.setAttribute('disabled', 'true');
+                    timeSelect.value = "0"; // 置灰時顯示 0
+                }
+                updateRowTotal(index);
+            }
+        }
+
+        /**
+         * 更新單一行的加班總時間 (只有在勾選「有」時才把選取的數值計入，否則計為0)
+         */
+        function updateRowTotal(index) {
+            const morningYes = document.querySelector(`input[name='morning_status_${index}'][value='yes']`).checked;
+            const afternoonYes = document.querySelector(`input[name='afternoon_status_${index}'][value='yes']`).checked;
+
+            const morningTime = morningYes ? (parseInt(document.getElementById(`morning_time_${index}`).value) || 0) : 0;
+            const afternoonTime = afternoonYes ? (parseInt(document.getElementById(`afternoon_time_${index}`).value) || 0) : 0;
+            
+            const total = morningTime + afternoonTime;
+            document.getElementById(`row_total_${index}`).innerText = total;
+        }
+
+        /**
+         * 統計整個月的各時段加總，並連動「人員身分」計算最終的加權小時數（無條件進位）
+         */
+        function updateTotals() {
+            let totalOvertime = 0;
+            const rowsCount = document.getElementById("dailyOvertimeTableBody").children.length;
+
+            for (let i = 0; i < rowsCount; i++) {
+                const morningYes = document.querySelector(`input[name='morning_status_${i}'][value='yes']`)?.checked || false;
+                const afternoonYes = document.querySelector(`input[name='afternoon_status_${i}'][value='yes']`)?.checked || false;
+
+                const morningVal = morningYes ? (parseInt(document.getElementById(`morning_time_${i}`)?.value) || 0) : 0;
+                const afternoonVal = afternoonYes ? (parseInt(document.getElementById(`afternoon_time_${i}`)?.value) || 0) : 0;
+                
+                totalOvertime += (morningVal + afternoonVal);
+            }
+
+            // 更新倒數第二列：當月總計延長工作時間總時間
+            document.getElementById("totalDailyOvertime").innerText = `${totalOvertime} 分鐘`;
+
+            // 讀取當前選擇的人員身分
+            const selectedStatusEl = document.querySelector("input[name='personnelStatus']:checked");
+            const status = selectedStatusEl ? selectedStatusEl.value : "teacher_admin"; // 預設為 teacher_admin
+
+            const labelEl = document.getElementById("totalOvertimeLabel");
+            const valueEl = document.getElementById("totalOvertimeValue");
+
+            if (status === "civil_servant") {
+                // 公務人員：直接除以 60 並且無條件進位
+                labelEl.innerText = "當月總計延長工作時間總時數";
+                const hours = Math.ceil(totalOvertime / 60);
+                valueEl.innerText = `${hours} 小時`;
+            } else {
+                // 教師兼行政、代理教師兼行政、其他人員：乘 1.5 倍後除以 60 並無條件進位
+                labelEl.innerText = "當月總計延長工作時間*1.5倍總時數";
+                const hours = Math.ceil((totalOvertime * 1.5) / 60);
+                valueEl.innerText = `${hours} 小時`;
+            }
+        }
+
+        /**
+         * 匯出至 Word (.doc) 核心技術函數
+         */
+        function exportToWord() {
+            const rocYear = document.getElementById("rocYear").value;
+            const month = document.getElementById("monthSelect").value;
+
+            // 1. 建立外部容器
+            const container = document.createElement('div');
+            
+            // 2. 複製並設定標題
+            const titleText = document.querySelector('h1').innerText;
+            const titleDiv = document.createElement('div');
+            titleDiv.innerText = titleText;
+            titleDiv.style.textAlign = 'center';
+            titleDiv.style.fontSize = '14pt';
+            titleDiv.style.fontWeight = 'bold';
+            titleDiv.style.marginBottom = '6pt';
+            titleDiv.style.fontFamily = '"Microsoft JhengHei", PMingLiU, sans-serif';
+            container.appendChild(titleDiv);
+
+            // 3. 複製整個表格 DOM 以達到「一成不變」的結構與寬度
+            const originalTable = document.getElementById('applicationTable');
+            const tableClone = originalTable.cloneNode(true);
+            container.appendChild(tableClone);
+
+            // 4. 將 Clone 表格中的 input, select 轉為純文字 (保留勾選狀態與真實輸入值)
+            const originalInputs = originalTable.querySelectorAll('input, select');
+            const clonedInputs = tableClone.querySelectorAll('input, select');
+            
+            for (let i = 0; i < originalInputs.length; i++) {
+                const orig = originalInputs[i];
+                const clone = clonedInputs[i];
+                
+                if (orig.classList.contains('no-print')) {
+                    // 移除列印不需要的控制項 (如年/月輸入框)
+                    clone.parentNode.removeChild(clone); 
+                } else if (orig.id === 'unitInput') {
+                    clone.outerHTML = `<span style="font-size:9pt; margin-right: 15pt;">處室：${orig.value || '______'}</span>`;
+                } else if (orig.id === 'jobTitleInput') {
+                    clone.outerHTML = `<span style="font-size:9pt;">職稱：${orig.value || '______'}</span>`;
+                } else if (orig.id === 'nameInput') {
+                    clone.outerHTML = `<span style="font-size:9pt;">姓名：${orig.value || '______'}</span>`;
+                } else if (orig.tagName === 'SELECT') {
+                    clone.outerHTML = `<span style="font-size:9pt;">${orig.options[orig.selectedIndex].text}</span>`;
+                } else if (orig.type === 'checkbox' || orig.type === 'radio') {
+                    // 使用標準的打勾、空方塊符號確保 Word 辨識
+                    const symbol = orig.checked ? '☑' : '☐';
+                    clone.outerHTML = `<span style="font-family: 'Segoe UI Symbol', Arial, sans-serif; font-size:11pt; color: ${orig.checked ? '#1D4ED8' : '#666'};">${symbol}</span>`;
+                } else {
+                    clone.outerHTML = `<span style="font-size:9pt;">${orig.value}</span>`;
+                }
+            }
+
+            // 5. 處理列印顯示相關的隱藏/顯示類別 (讓它與列印預覽結果相同)
+            const printInlines = tableClone.querySelectorAll('.print\\:inline');
+            printInlines.forEach(el => {
+                el.classList.remove('hidden');
+                el.style.display = 'inline';
+            });
+            const printBlackText = tableClone.querySelectorAll('.print\\:text-black');
+            printBlackText.forEach(el => el.style.color = '#000000');
+
+            // 6. 為 Word 排版補齊所有 inline-styles，取代 Word 不支援的 Tailwind classes
+            tableClone.style.borderCollapse = 'collapse';
+            tableClone.style.width = '100%';
+            tableClone.style.tableLayout = 'fixed';
+
+            const cells = tableClone.querySelectorAll('th, td');
+            cells.forEach(cell => {
+                cell.style.border = '1px solid black';
+                // 極度壓縮 padding 保證不管多少天都能塞進單頁 A4
+                cell.style.padding = '3px 2px'; 
+                cell.style.fontSize = '9pt';
+                cell.style.fontFamily = '"Microsoft JhengHei", PMingLiU, sans-serif';
+                
+                if (cell.classList.contains('text-left')) cell.style.textAlign = 'left';
+                else if (cell.classList.contains('text-right')) cell.style.textAlign = 'right';
+                else cell.style.textAlign = 'center';
+
+                cell.style.verticalAlign = 'middle';
+
+                // 處理背景色 (手動轉換 Tailwind 的 bg-gray 視覺效果)
+                if (cell.classList.contains('bg-gray-50') || cell.closest('.bg-gray-50')) {
+                    cell.style.backgroundColor = '#F9FAFB';
+                } else if (cell.classList.contains('bg-gray-100') || cell.closest('.bg-gray-100')) {
+                    cell.style.backgroundColor = '#F3F4F6';
+                } else if (cell.closest('.bg-blue-50\\/10')) {
+                    cell.style.backgroundColor = '#F8FAFC';
+                } else if (cell.closest('.bg-blue-50\\/30')) {
+                    cell.style.backgroundColor = '#EFF6FF';
+                }
+            });
+
+            // 粗體字強制套用
+            const bolds = tableClone.querySelectorAll('.font-bold, .font-semibold');
+            bolds.forEach(el => el.style.fontWeight = 'bold');
+
+            // 印章欄高度定義為精準的 40pt
+            const stampRows = tableClone.querySelectorAll('.stamp-row');
+            stampRows.forEach(row => {
+                row.style.height = '40pt';
+            });
+
+            // 修正 Word 不支援 flex，轉換為 block 與 inline-block 的間距佈局
+            const flexContainers = tableClone.querySelectorAll('.flex');
+            flexContainers.forEach(container => {
+                container.style.display = 'block';
+                const children = container.children;
+                for(let i = 0; i < children.length; i++) {
+                    if (children[i].tagName === 'LABEL') {
+                        children[i].style.display = 'inline-block';
+                        children[i].style.marginRight = '12pt';
+                    }
+                }
+            });
+
+            // 7. 將組合好的 HTML 裝入 Microsoft Word 的 XML 封裝
+            const wordContent = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office' 
+                      xmlns:w='urn:schemas-microsoft-com:office:word' 
+                      xmlns='http://www.w3.org/TR/REC-html40'>
+                <head>
+                    <title>延長工作時間申請表</title>
+                    <!--[if gte mso 9]>
+                    <xml>
+                        <w:WordDocument>
+                            <w:View>Print</w:View>
+                            <w:Zoom>100</w:Zoom>
+                            <w:DoNotOptimizeForBrowser/>
+                        </w:WordDocument>
+                    </xml>
+                    <![endif]-->
+                    <style>
+                        @page Section1 {
+                            size: 595.3pt 841.9pt; /* A4 標準尺寸 */
+                            margin: 20.0pt 24.0pt 20.0pt 24.0pt; /* 超窄極限邊界防爆版 */
+                        }
+                        div.Section1 { page: Section1; }
+                        body { 
+                            font-family: "Microsoft JhengHei", PMingLiU, sans-serif;
+                            line-height: 1.1; 
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="Section1">
+                        ${container.innerHTML}
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            // 8. 觸發自動下載
+            const blob = new Blob([wordContent], { type: "application/msword;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `高雄市路竹區下坑國小_延長工作時間申請表_${rocYear}年${month}月.doc`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        /**
+         * 重設表單所有欄位
+         */
+        function resetForm() {
+            document.getElementById("rocYear").value = "115";
+            document.getElementById("monthSelect").value = "5";
+            currentDefaultTime = 15; // 恢復成 15 分鐘
+            
+            // 重設文字輸入
+            document.getElementById("unitInput").value = "";
+            document.getElementById("jobTitleInput").value = "";
+            document.getElementById("nameInput").value = "";
+            
+            // 重設單選按鈕 (身分狀態) - 恢復預設值「教師兼行政」
+            const statusRadios = document.querySelectorAll("input[name='personnelStatus']");
+            statusRadios.forEach(radio => {
+                if (radio.value === "teacher_admin") {
+                    radio.checked = true;
+                } else {
+                    radio.checked = false;
+                }
+            });
+            
+            calculateWorkDays();
+        }
+
+        // 頁面載入完成後自動執行首次計算
+        window.onload = function() {
+            calculateWorkDays();
+        };
+    </script>
+</body>
+</html>
